@@ -1,0 +1,43 @@
+Q1 Grade of students
+90-S=GRADE
+80-89=A GRADE
+70-79=B GRADE
+60-69=C GRADE
+<59=D GRADE
+
+SOLUTION:-
+
+#include <stdio.h>
+int main()
+{
+int a=49;
+ if (a>=90)
+{
+    printf("GRADE S");
+}
+else 
+    if(a>=80 && a<=90)
+{
+    printf("grade A");
+}
+else 
+    if(a>=70 && a<=79)
+{
+    printf("grade B");
+}
+else 
+   if(a>=60 && a<=69)
+{
+    printf("grade C");
+}
+else 
+   if(a>=59)
+{
+    printf("grade D");
+}
+else 
+{
+    printf("FAILED");
+    return 0;
+}
+}
