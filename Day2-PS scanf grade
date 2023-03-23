@@ -1,0 +1,37 @@
+GRADE using Scanf
+
+#include <stdio.h>
+//#include <conio.h>
+
+int main()
+{
+int mark;
+printf("Enter the number(1-6)");
+scanf("%d",&mark);
+switch(mark)
+{
+    case 1:
+    printf("GRADE S");
+    break;
+   case 2:
+    printf("GRADE A");
+   
+    break;
+   case 3:
+    printf("GRADE B");
+  
+    break;
+   case 4:
+    printf("GRADE C");
+    break;
+   case 5:
+    printf("GRADE D");
+  
+    break;
+   case 6:
+    printf("Failed");
+   
+    break;
+    return 0;
+}
+}
