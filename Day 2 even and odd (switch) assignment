@@ -1,0 +1,23 @@
+C program to check whether number is EVEN or ODD using switch
+
+#include <stdio.h>  
+   
+int main() {  
+    int num;  
+   
+    printf("Enter an Integer\n");  
+    scanf("%d", &num);  
+   
+    switch(num%2) {     
+        /* Even numbers are divisible by 2  */ 
+        case 0: printf("%d is Even", num);  
+                break;  
+        /* Odd numbers are not divisible by 2 */ 
+        case 1: printf("%d is Odd", num);  
+                break;  
+      
+        
+                
+    }  
+     return 0;
+}
