@@ -1,0 +1,15 @@
+Compile and Execute the C program to print the multiplication table of number m up to n.
+solution:
+
+#include<stdio.h>
+int main()
+{
+	int M,N,i;
+	printf("Enter M and N value:");
+	scanf("%d %d",&N,&M);
+	for(i=0;i<=M;i++)
+	{
+		printf("%d X %d = %d\n",i,N,i*N);
+	}
+	return 0;
+}
