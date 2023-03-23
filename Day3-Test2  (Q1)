@@ -1,0 +1,16 @@
+1.Compile and Execute the C program were the user to enter an integer to compute the
+square, cube of the given decimal number using standard method.
+
+// Online C compiler to run C program online
+#include<stdio.h>
+int main()
+{
+     int x,square,cube;
+     printf("Enter the number :--> ");
+     scanf("%d", &x);
+     square = x * x;
+     cube = x * x * x;
+     printf("Square number :--> %1d", square);
+     printf("\nCube number :--> %1d", cube);
+     return 0;
+}
