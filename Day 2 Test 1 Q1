@@ -1,0 +1,37 @@
+Compile and Execute the C program to calculate Arithmetic Operators Functions such as
+Pow(x,n), Add(x,n), Sub(x,n), Mul(x,n), Div(x,n), where x and n are the two operands. Get
+the input and choice from the user.
+
+SOLUTION:
+
+#include<stdio.h>
+int main()
+{
+    int X,N;
+    int op;
+    printf(" 1.Add\n 2.Sub\n 3.Multiply\n 4.Division\n 5.Power\n");
+    printf("Enter the values of X & Y: ");
+    scanf("%d %d",&X,&N);
+    printf("Enter your Choice : ");
+    scanf("%d",&op);
+    switch(op)
+    {
+    case 1	:
+        printf("Sum of %d and %d is : %d",X,N,X+N);
+        break;
+    case 2	:
+        printf("Difference of %d and %d is : %d",X,N,X-N);
+        break;
+    case 3	:
+        printf("Multiplication of %d and %d is : %d",X,N,X*N);
+        break;
+    case 4	:
+        printf("Division of  %d and %d is:%d  ",X,N,X/N);
+        break;
+    case 5	:
+        printf("Power of  %d and %d is:%d ",X,N,X^N);
+        break;
+    
+    }
+    return 0;
+}
