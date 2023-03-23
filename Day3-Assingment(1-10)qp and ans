@@ -1,0 +1,387 @@
+1.C program to reverse a string without using library function:
+
+
+#include <stdio.h>
+#include <string.h>
+void main(){
+   char string[20],temp;
+   int i,length;
+   printf("Enter String : ");
+   scanf("%s",string);
+   length=strlen(string)-1;
+   for(i=0;i<strlen(string)/2;i++){
+      temp=string[i];
+      string[i]=string[length];
+      string[length--]=temp;
+   }
+   printf("Reverse string :%s",string);
+   
+}
+OUTPUT:
+Enter String : tutorialspoint
+Reverse string :tniopslairotut
+
+2.Find factorial using recursion in C program:
+#include<stdio.h>
+long int multiplyNumbers(int n);
+int main() {
+    int n;
+    printf("Enter a positive integer: ");
+    scanf("%d",&n);
+    printf("Factorial of %d = %ld", n, multiplyNumbers(n));
+    return 0;
+}
+
+long int multiplyNumbers(int n) {
+    if (n>=1)
+        return n*multiplyNumbers(n-1);
+    else
+        return 1;
+}
+OUTPUT:
+Enter a positive integer: 6
+Factorial of 6 = 720
+
+3.        *
+        * *
+      * * *
+    * * * *
+  * * * * *
+code for this pattern?
+
+#include<stdio.h>
+int main()
+{
+    int r,c,n,at;
+    printf("Enter the numbers of row: ");
+    scanf("%d",&n);
+    for(r=1;r<=n;r++)
+    {
+        for(c=(n-r);c>=1;c--)
+        {
+            printf(" ");
+        }
+        for(at=1;at<=r;at++)
+            printf("*",at);
+        printf("\n");
+    }
+    
+
+}
+
+OUTPUT:
+enter the number of rows:5
+          *
+        * *
+      * * *
+    * * * *
+  * * * * *
+
+4.1
+  21
+  321
+  4321
+  54321
+Code for the given pattern:
+#include <stdio.h>
+
+int main()
+{
+    int r,c;
+
+    for(r=1; r<=5; r++)
+    {
+        for(c=r; c>=1; c--)
+        {
+            
+            printf("%d",c);
+        }
+        printf("\n");
+    }
+    return 0;
+}
+
+5.                 *
+                 * * *
+               * * * * *
+             * * * * * * *
+           * * * * * * * * *
+           * * * * * * * * *
+             * * * * * * *
+               * * * * *
+                 * * *
+                   *
+Coding for the patter?
+#include <stdio.h>
+void main()  
+{
+    int i, j, rows, k;
+    char p;
+    printf("Enter a Symbol or character : ");
+    scanf("%c",&p);
+    printf (" Enter a number to define the rows: ");  
+    scanf("%d", &rows);   
+    int space = rows-1, num=1;  
+    printf("\n");
+    for (i = 1; i <= rows; i++)   
+    {  
+        for (j = 1; j <= space; j++)   
+        {  
+            printf("  ");
+        }  
+        for ( k= 1; k <= num; k++)  
+        {  
+            printf(" %c",p);  
+        }  
+        if(space > i)  
+        {  
+            space = space -1;  
+            num = num+2;  
+        }  
+        if(space <i)  
+        {  
+            space = space + 1;  
+            num = num -2;  
+        }  
+        printf("\n");  
+    }
+}
+
+6.Write a program to find the number of composite numbers in an array of elements Sample Input:
+Array of elements = {16, 18, 27, 16, 23, 21, 19}
+Sample Output:
+Number of Composite Numbers = 5
+Test cases:
+1.Array of elements = {26, 28, 37, 26, 33, 31, 29}
+2. Array of elements = {1.6, 1.8, 2.7, 1.6, 2.3, 2.1, .19}
+3. Array of elements = {0, 160, 180, 270, 160, 230, 210, 190, 0}
+4. Array of elements = {200, 180, 180, 270, 270, 270, 190, 200}
+5. Array of elements = {100, 100, 100, 100, 100, 100, 100, 100}
+CODING:
+#include <stdio.h>
+int isComposite(int n) {
+
+    if (n <= 1) {
+
+        return 0;
+
+    }
+
+    for (int i = 2; i <= n / 2; i++) {
+
+        if (n % i == 0) {
+
+            return 1;
+
+        }
+
+    }
+
+    return 0;
+
+}
+
+int main() {
+
+    int arr[] = {26, 28, 37, 26, 33, 31, 29};
+
+    int size = sizeof(arr) / sizeof(arr[0]);
+
+    int compositeCount = 0;
+    for (int i = 0; i < size; i++) {
+
+        if (isComposite(arr[i])) {
+
+            compositeCount++;
+
+        }
+
+    }
+
+    printf("Number of Composite Numbers = %d", compositeCount);
+
+    return 0;
+
+}
+OUTPUT:
+Number of Composite Numbers = 4
+Number of Composite Numbers = 0
+Number of Composite Numbers = 7
+Number of Composite Numbers = 8
+Number of Composite Numbers = 8
+
+7. Write a program to print the number of negative numbers in an array of numbersSample Input:
+Array of elements = {16, -18, 27, -16, 23, -21, 19}
+Sample Output:
+Number of negative numbers in Array elements = 3
+Test cases:
+1.Array of elements = {-26, 28, 37, -26, 33, -31, -29}
+2. Array of elements = {1.6, 1.8, 2.7, -1.6, 2.3, -2.1, .19}
+3. Array of elements = {0, 160, 180, 270, 160, 230, 210, 190, 0}
+4. Array of elements = {-16, 2.8, -7, -1.5, 2.8, -2.8, -.19}
+5. Array of elements = {-160, -160, -180, -270, -160, -230, -210, 1-90, 0}
+CODING:
+#include <stdio.h>
+
+int main() {
+
+    int arr[] = {-26, 28, 37, -26, 33, -31, -29};
+
+    int n = sizeof(arr) / sizeof(arr[0]);
+
+    int count = 0;
+
+    for (int i = 0; i < n; i++) {
+
+        if (arr[i] < 0) {
+
+            count++;
+
+        }
+
+    }
+
+    printf("Number of negative numbers in Array elements = %d\n", count);
+
+    return 0;
+}
+Output:
+1.Number of negative numbers in Array elements = 4
+2.Number of negative numbers in Array elements = 2
+3.Number of negative numbers in Array elements = 0
+4.Number of negative numbers in Array elements = 4
+5.Number of negative numbers in Array elements = 8
+
+8.Write a program to reverse an array
+Sample Input:
+Array of elements = {16, 18, 27, 16, 23, 21, 19}
+Sample Output:
+Reverse Array elements = {19, 21 23, 16, 27, 18, 16}
+Test cases:
+1.Array of elements = {26, 28, 37, 26, 33, 31, 29}
+2. Array of elements = {1.6, 1.8, 2.7, 1.6, 2.3, 2.1, .19}
+3. Array of elements = {0, 160, 180, 270, 160, 230, 210, 190, 0}
+4. Array of elements = {200, 180, 180, 270, 270, 270, 190, 200}
+5. Array of elements = {100, 100, 100, 100, 100, 100, 100, 100} 
+CODING:
+#include <stdio.h>
+#define MAX_SIZE 100
+int main()
+{
+    int arr[MAX_SIZE];
+    int i, n;
+    printf("Enter the size of the array: ");
+
+    scanf("%d", &n);    
+    printf("Enter %d elements in the array: ", n);
+
+    for(i=0; i<n; i++)
+    {
+        scanf("%d", &arr[i]);
+    }
+    printf("Original array: ");
+
+    for(i=0; i<n; i++)
+
+    {
+        printf("%d ", arr[i]);
+    }
+    printf("\nReversed array: ");
+
+    for(i=n-1; i>=0; i--)
+
+    {
+        printf("%d ", arr[i]);
+    }
+    return 0;
+
+}
+OUTPUT:
+a.)Enter the size of the array: 7
+Enter 7 elements in the array: 16 18 27 16 23 21 19
+Original array:16 18 27 16 23 21 19
+Reversed array:19 21 23 16 27 18 16
+
+9.The transpose of a matrix is found by interchanging its rows into columns or columns
+into rows. Write a program to find the Transpose of a given Matrix. 
+CODING:
+#include <stdio.h>
+int main() {
+    int rows, cols;
+    printf("Enter the number of rows and columns of the matrix:\n");
+    scanf("%d%d", &rows, &cols);
+    int matrix[rows][cols];
+    printf("Enter the elements of the matrix:\n");
+    for (int i = 0; i < rows; i++) {
+        for (int j = 0; j < cols; j++) {
+            scanf("%d", &matrix[i][j]);
+        }
+    }
+    int transpose[cols][rows];
+    for (int i = 0; i < rows; i++) {
+        for (int j = 0; j < cols; j++) {
+            transpose[j][i] = matrix[i][j];
+        }
+    }
+    printf("The transpose of the matrix is:\n");
+    for (int i = 0; i < cols; i++) {
+        for (int j = 0; j < rows; j++) {
+            printf("%d ", transpose[i][j]);
+        }
+        printf("\n");
+    }
+    return 0;
+}
+OUTPUT:
+Enter the number of rows and columns of the matrix:
+2 2
+Enter the elements of the matrix:
+8 9 4 5
+The transpose of the matrix is:
+8 4 
+9 5 
+
+
+10.Program to remove duplicates from the sorted array 
+CODING:
+#include<stdio.h>
+int main()
+{
+    int arr[100], n, i, j, k;
+    printf("Enter the size of array: ");
+    scanf("%d", &n);
+    printf("Enter the elements of the array: ");
+   for(i=0;i<n;i++)
+    {
+        scanf("%d", &arr[i]);
+    }
+    for(i=0;i<n;i++)
+    {
+        for(j=i+1;j<n;)
+        {
+            if(arr[j]==arr[i])
+            {
+                for(k=j;k<n;k++)
+                {
+                    arr[k]=arr[k+1];
+                }
+                n--;
+            }
+           else
+            {
+                j++;
+            }
+        }
+    }
+   printf("The array after removing duplicates is: ");
+    for(i=0;i<n;i++)
+    {
+       printf("%d ", arr[i]);
+    }
+    return 0;
+}
+OUTPUT:
+
+Enter the size of array: 5
+Enter the elements of the array: 16 16 16 16 16
+The array after removing duplicates is: 16
