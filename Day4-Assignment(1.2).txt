@@ -1,0 +1,31 @@
+2.Write a C program to input a character and check whether the character is alphabet or not using Conditional/Ternary operator ?:. How to check alphabets using conditional operator in C programming.
+
+
+#include <stdio.h>
+
+int main()
+{
+    char ch;
+    
+    /*
+     * Input character from user
+     */
+    printf("Enter any character: ");
+    scanf("%c", &ch);
+    
+    /*
+     * If (ch>'a' and ch<'z') or (ch>'A' and ch<'Z') then
+     *     print alphabet
+     * else
+     *     print not alphabet
+     */
+    (ch>='a' && ch<='z') || (ch>='A' && ch<='Z') 
+        ? printf("It is ALPHABET")
+        : printf("It is NOT ALPHABET");
+
+    return 0;
+}
+
+Output:
+Enter any character: j
+It is ALPHABET
