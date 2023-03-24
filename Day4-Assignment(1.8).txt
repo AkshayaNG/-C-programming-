@@ -1,0 +1,10 @@
+8.What will be the output of the program if the array begins 1200 in memory?
+#include<stdio.h>
+int main()
+{   
+ int arr[]={2, 3, 4, 1, 6};  
+  printf("%u, %u, %un", arr, &arr[1200], &arr);  
+  return 0;
+}
+output:
+433404752, 433409552, 433404752n
