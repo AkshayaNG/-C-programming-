@@ -1,0 +1,42 @@
+C program for implementation of Bubble sort
+#include <stdio.h>
+void bubblesort(int array[],int size)
+// A function to implement bubble sort
+{
+    for(int step=0;step<size-1;++step)
+    {
+        for(int i=0;i<size-step-1;++i)
+        {
+            if (array[i]>array[i+1])
+            {
+                int temp=array[i];
+                array[i]=array[i+1];
+                array[i+1]=temp;
+            }
+        }
+    }
+}
+ 
+/* Function to print an array */
+void printArray(int array[], int size)
+{
+    int i;
+    for (i = 0; i < size; i++)
+        printf("%d ", array[i]);
+    printf("\n");
+}
+ 
+// Driver program to test above functions
+int main()
+{
+    int data[] = { 5, 1, 4, 2, 8 };
+    int size = sizeof(data) / sizeof(data[0]);
+    bubblesort(data,size);
+    printf("Sorted array: \n");
+    printArray(data,size);
+    return 0;
+}
+
+output:
+Sorted array: 
+1 2 4 5 8
