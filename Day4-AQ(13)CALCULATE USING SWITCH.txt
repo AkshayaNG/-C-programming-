@@ -1,0 +1,65 @@
+Calculate using switch
+
+#include<stdio.h>
+void main()
+{
+	int num1,num2,opt;
+	int clrscr();
+	printf("Enter the first Integer:\n");
+	scanf("%d",&num1);
+	printf("Enter the second Integer:\n");
+	scanf("%d",&num2);
+	for(;;)
+	{
+		printf("\n\n\n\nEnter the your option:\n");
+		printf("1-Addition.\n2-Substraction.\n3-Multiplication.\n4-Division.\n5-Exit.\n");
+		scanf("%d",&opt);
+		switch(opt)
+		{
+			case 1:printf("\nAddition of  %d and %d is: %d",num1,num2,num1+num2);
+			break;
+			case 2:printf("\nSubstraction of %d  and %d is:  %d",num1,num2,num1-num2);
+			break;
+			case 3:printf("\nMultiplication of %d  and %d is:  %d",num1,num2,num1*num2);
+			break;  
+			case 4: 
+			if(num2==0)
+			{
+				printf("OOps Devide by zero\n");
+			}
+			else
+			{
+				printf("\n Division of %d  and %d is:  %d",num1,num2,num1/num2);
+			}  
+			break;
+			case 5: return 0;
+			break; 
+			default:printf("\n Enter correct option\n");
+			break; 
+		}
+	}
+}
+OUTPUT:
+Enter the first Integer:
+566
+Enter the second Integer:
+962
+Enter the your option:
+1-Addition.
+2-Substraction.
+3-Multiplication.
+4-Division.
+5-Exit.
+3
+Multiplication of 566  and 962 is:  544492
+
+
+
+Enter the your option:
+1-Addition.
+2-Substraction.
+3-Multiplication.
+4-Division.
+5-Exit.
+1
+Addition of  566 and 962 is: 1528
