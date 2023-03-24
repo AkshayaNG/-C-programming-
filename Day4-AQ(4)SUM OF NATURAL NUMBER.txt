@@ -1,0 +1,19 @@
+#include <stdio.h>
+void main()  
+{  
+    int num, i, sum = 0;   
+    printf("Enter a number : ");  
+    scanf("%d", &num); 
+    i = 0;  
+    while (i <= num)
+    {  
+        sum = sum + i; 
+        i++; 
+    }  
+    printf(" \n Sum of first %d natural number is : %d", num, sum);  
+
+}  
+
+OUTPUT:
+Enter a number : 15
+Sum of first 15 natural number is : 120
