@@ -1,0 +1,31 @@
+#include<stdio.h>
+int linearsearch(int a[],int n,int val)
+{
+    for(int i=0;i<n;i++)
+    {
+        if (a[i]==val)
+        return i+1;
+    }
+    return -1;
+    }
+    int main()
+    {
+        int a[]={70,40,30,11,57,41,25,14,52};
+        int val=414;
+        int n=sizeof(a)/sizeof(a[0]);
+        int res=linearsearch(a,n,val);
+        printf("The element of the array are:");
+        for(int i=0;i<n;i++)
+        printf("%d",a[i]);
+        printf("\n Element to be searh is %d",val);
+        if(res == -1)
+        printf("\n Elemnt is not present in the array");
+        else
+        printf("\n element is present at %d position of array",res);
+        return 0;
+    }
+    
+OUTPUT:
+The element of the array are:70 40 30 11 57 41 25 14 52
+Element to be searh is 41
+element is present at 6 position of array
